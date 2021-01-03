@@ -1,0 +1,8 @@
+{
+  "shortcuts": [
+    {
+      "keybinding": "Ctrl+Ü",
+      "command": "python c:/Users/erzae/Nextcloud/python/lazyRemote/lazyRemoteOff.py"
+    }
+  ]
+}
