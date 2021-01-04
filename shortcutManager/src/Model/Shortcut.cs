@@ -14,7 +14,7 @@ namespace shortcutManager
 
         private ISet<Keys> keys;
 
-        public string Command { get; }
+        public string Command { get; set; }
 
         public Shortcut()
         {

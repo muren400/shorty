@@ -13,6 +13,7 @@ namespace shortcutManager
 
     public class SettingsShortcuts : SettingsItem
     {
+        private SettingsShortcutControl settingsShortcutControl;
         private SplitContainer splitContainer;
         private ListView shortcutsListView;
         private TextBox commandTextBox;
@@ -26,63 +27,71 @@ namespace shortcutManager
 
         public override Control getSettingsControl()
         {
-            return splitContainer;
+            return settingsShortcutControl;
         }
 
         protected override void InitItem()
         {
-            splitContainer = new SplitContainer();
-            splitContainer.Dock = DockStyle.Fill;
-
-            Label labelShortcuts = new Label
+            settingsShortcutControl = new SettingsShortcutControl(shortcutManager)
             {
-                AutoSize = true,
-                Text = "Shortcuts",
-                Dock = DockStyle.Top
-            };
-
-            shortcutsListView = new ListView
-            {
-                FullRowSelect = true,
-                Dock = DockStyle.Fill,
-                BackColor = System.Drawing.Color.Gray,
-                LabelEdit = true
-            };
-
-            //ObservableCollection<Shortcut> observableCollection = new ObservableCollection<Shortcut>();
-
-            //shortcutsListView.BindingContext = observableCollection;
-
-            shortcutsListView.ItemSelectionChanged += ShortcutSelectedEvent;
-
-            Button addButton = new Button
-            {
-                Text = "Add",
-                Dock = DockStyle.Bottom
-            };
-
-            addButton.Click += AddButton_Click;
-
-            splitContainer.Panel1.Controls.Add(addButton);
-
-            splitContainer.Panel1.Controls.Add(shortcutsListView);
-            splitContainer.Panel1.Controls.Add(labelShortcuts);
-
-            Label labelCommand = new Label
-            {
-                AutoSize = true,
-                Text = "Command",
-                Dock = DockStyle.Top
-            };
-
-            commandTextBox = new TextBox
-            {
-                Multiline = true,
                 Dock = DockStyle.Fill
             };
+            //splitContainer = new SplitContainer();
+            //splitContainer.Dock = DockStyle.Fill;
 
-            splitContainer.Panel2.Controls.Add(commandTextBox);
-            splitContainer.Panel2.Controls.Add(labelCommand);
+            //Label labelShortcuts = new Label
+            //{
+            //    AutoSize = true,
+            //    Text = "Shortcuts",
+            //    Dock = DockStyle.Top
+            //};
+
+            //shortcutsListView = new ListView
+            //{
+            //    FullRowSelect = true,
+            //    Dock = DockStyle.Fill,
+            //    LabelEdit = true
+            //};
+
+            shortcutsListView = settingsShortcutControl.GetKeystrokesListView();
+            shortcutsListView.ItemSelectionChanged += ShortcutSelectedEvent;
+
+            //TableLayoutPanel actionsTable = new TableLayoutPanel
+            //{
+            //    Dock = DockStyle.Bottom
+            //};
+            //splitContainer.Panel1.Controls.Add(actionsTable);
+
+            //Button addButton = new Button
+            //{
+            //    Text = "Add Shortcut",
+            //    Dock = DockStyle.Bottom
+            //};
+
+            //addButton.Click += AddButton_Click;
+
+            //actionsTable.Controls.Add(addButton);
+
+            //splitContainer.Panel1.Controls.Add(shortcutsListView);
+            //splitContainer.Panel1.Controls.Add(labelShortcuts);
+
+            //Label labelCommand = new Label
+            //{
+            //    AutoSize = true,
+            //    Text = "Command",
+            //    Dock = DockStyle.Top
+            //};
+
+            //commandTextBox = new TextBox
+            //{
+            //    Multiline = true,
+            //    Dock = DockStyle.Fill
+            //};
+
+            commandTextBox = settingsShortcutControl.GetCommandTextBox();
+
+            //splitContainer.Panel2.Controls.Add(commandTextBox);
+            //splitContainer.Panel2.Controls.Add(labelCommand);
 
             ReloadShortcus();
         }

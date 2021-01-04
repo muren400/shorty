@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,21 +42,40 @@ namespace shortcutManager
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(SHORTCUTS_PROPERTY_CHANGED));
         }
 
+        public void WriteShortcuts()
+        {
+            JObject config = new JObject();
+            JArray jsonShortcuts = new JArray();
+
+            foreach(Shortcut shortcut in shortcuts)
+            {
+                JObject jsonShortcut = new JObject();
+                jsonShortcut.Add("keybinding", shortcut.GetKeysAsString());
+                jsonShortcut.Add("command", shortcut.Command);
+                jsonShortcuts.Add(jsonShortcut);
+            }
+
+            config.Add("shortcuts", jsonShortcuts);
+            config.ToString();
+
+            using (StreamWriter file = File.CreateText(GetConfigPath()))
+            using (JsonTextWriter writer = new JsonTextWriter(file))
+            {
+                writer.Formatting = Formatting.Indented;
+
+                config.WriteTo(writer);
+            }
+
+            ReloadConfig();
+        }
+
         private void ReadShortcuts()
         {
             shortcuts = new List<Shortcut>();
 
             var appDataDir = Directory.GetParent(Application.LocalUserAppDataPath);
 
-            string jsonPath = appDataDir.FullName;
-
-            if (Directory.Exists(jsonPath) == false)
-                Directory.CreateDirectory(jsonPath);
-
-            jsonPath += Path.DirectorySeparatorChar + CONFIG_FILE_NAME;
-
-            if (File.Exists(jsonPath) == false)
-                File.Create(jsonPath);
+            string jsonPath = GetConfigPath();
 
             string strJson = File.ReadAllText(jsonPath);
             var jsonShortcutConfig = JObject.Parse(strJson);
@@ -72,6 +92,23 @@ namespace shortcutManager
 
                 shortcuts.Add(new Shortcut(keybinding, command));
             }
+        }
+
+        private String GetConfigPath()
+        {
+            var appDataDir = Directory.GetParent(Application.LocalUserAppDataPath);
+
+            string configPath = appDataDir.FullName;
+
+            if (Directory.Exists(configPath) == false)
+                Directory.CreateDirectory(configPath);
+
+            configPath += Path.DirectorySeparatorChar + CONFIG_FILE_NAME;
+
+            if (File.Exists(configPath) == false)
+                File.Create(configPath);
+
+            return configPath;
         }
     }
 }

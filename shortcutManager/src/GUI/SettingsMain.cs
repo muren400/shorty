@@ -51,10 +51,5 @@ namespace shortcutManager
             this.splitContainerMain.Panel2.Controls.Clear();
             this.splitContainerMain.Panel2.Controls.Add(settingsControl);
         }
-
-        private void ReloadConfigClicked(object sender, EventArgs e)
-        {
-            shortcutManager.ReloadConfig();
-        }
     }
 }

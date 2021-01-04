@@ -84,9 +84,15 @@ namespace shortcutManager
                         iMod |= (int)KeyModifier.Alt;
                         break;
                     case Keys.Control:
+                    case Keys.ControlKey:
+                    case Keys.RControlKey:
+                    case Keys.LControlKey:
                         iMod |= (int)KeyModifier.Control;
                         break;
                     case Keys.Shift:
+                    case Keys.ShiftKey:
+                    case Keys.LShiftKey:
+                    case Keys.RShiftKey:
                         iMod |= (int)KeyModifier.Shift;
                         break;
                     case Keys.LWin:
