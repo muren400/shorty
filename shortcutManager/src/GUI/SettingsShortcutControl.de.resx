@@ -120,8 +120,24 @@
   <data name="keystrokeBox.Text" xml:space="preserve">
     <value>Tastenkürzel</value>
   </data>
-  <data name="commandBox.Text" xml:space="preserve">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labelCommand.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="labelCommand.Text" xml:space="preserve">
     <value>Befehl</value>
+  </data>
+  <data name="textBoxName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 3</value>
+  </data>
+  <data name="textBoxName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 20</value>
+  </data>
+  <data name="textBoxCommand.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 36</value>
+  </data>
+  <data name="textBoxCommand.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 315</value>
   </data>
   <data name="buttonAddKeystroke.Text" xml:space="preserve">
     <value>Hinzufügen</value>

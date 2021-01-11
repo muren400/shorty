@@ -32,12 +32,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,16 +53,11 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\App.cs" />
     <Compile Include="src\Model\Command.cs" />
-    <Compile Include="src\GUI\KeyInputForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\GUI\KeyInputForm.Designer.cs">
-      <DependentUpon>KeyInputForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="src\KeyStrokeHandler.cs" />
     <Compile Include="src\GUI\NewShortcutForm.cs">
       <SubType>Form</SubType>
@@ -69,19 +70,16 @@
       <DependentUpon>SettingsShortcutControl.cs</DependentUpon>
     </Compile>
     <Compile Include="src\GUI\SettingsItem.cs" />
-    <Compile Include="src\GUI\SettingsMain.cs">
+    <Compile Include="src\GUI\SettingsFrom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\SettingsMain.Designer.cs">
-      <DependentUpon>SettingsMain.cs</DependentUpon>
+    <Compile Include="src\GUI\SettingsFrom.Designer.cs">
+      <DependentUpon>SettingsFrom.cs</DependentUpon>
     </Compile>
     <Compile Include="src\GUI\SettingsShortcuts.cs" />
     <Compile Include="src\Model\Shortcut.cs" />
     <Compile Include="src\Model\ShortcutManager.cs" />
     <Compile Include="src\GUI\Systray.cs" />
-    <EmbeddedResource Include="src\GUI\KeyInputForm.resx">
-      <DependentUpon>KeyInputForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -92,8 +90,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="src\GUI\SettingsMain.de.resx">
-      <DependentUpon>SettingsMain.cs</DependentUpon>
+    <EmbeddedResource Include="src\GUI\NewShortcutForm.resx">
+      <DependentUpon>NewShortcutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\SettingsFrom.de.resx">
+      <DependentUpon>SettingsFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\SettingsShortcutControl.de.resx">
       <DependentUpon>SettingsShortcutControl.cs</DependentUpon>
@@ -101,8 +102,8 @@
     <EmbeddedResource Include="src\GUI\SettingsShortcutControl.resx">
       <DependentUpon>SettingsShortcutControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\GUI\SettingsMain.resx">
-      <DependentUpon>SettingsMain.cs</DependentUpon>
+    <EmbeddedResource Include="src\GUI\SettingsFrom.resx">
+      <DependentUpon>SettingsFrom.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -119,6 +120,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icon.ico" />
+    <Content Include="res\icon_debug.ico" />
     <Content Include="res\icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

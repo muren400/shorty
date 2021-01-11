@@ -51,6 +51,7 @@ namespace shortcutManager
             {
                 JObject jsonShortcut = new JObject();
                 jsonShortcut.Add("keybinding", shortcut.GetKeysAsString());
+                jsonShortcut.Add("name", shortcut.ShortcutName);
                 jsonShortcut.Add("command", shortcut.Command);
                 jsonShortcuts.Add(jsonShortcut);
             }
@@ -58,7 +59,19 @@ namespace shortcutManager
             config.Add("shortcuts", jsonShortcuts);
             config.ToString();
 
-            using (StreamWriter file = File.CreateText(GetConfigPath()))
+            string path = GetConfigPath();
+            string dir = Path.GetDirectoryName(path);
+            string name = Path.GetFileName(path);
+            string backupPath = Path.Combine(dir, "backup_" + name);
+
+            if(File.Exists(backupPath))
+            {
+                File.Delete(backupPath);
+            }
+
+            File.Copy(path, backupPath);
+
+            using (StreamWriter file = File.CreateText(path))
             using (JsonTextWriter writer = new JsonTextWriter(file))
             {
                 writer.Formatting = Formatting.Indented;
@@ -87,10 +100,11 @@ namespace shortcutManager
 
             foreach (JObject jsonShortcut in jsonShortcuts)
             {
-                string keybinding = jsonShortcut.SelectToken("$.keybinding").Value<string>().ToString();
-                string command = jsonShortcut.SelectToken("$.command").Value<string>().ToString();
+                string keybinding = jsonShortcut.SelectToken("$.keybinding")?.Value<string>()?.ToString();
+                string name = jsonShortcut.SelectToken("$.name")?.Value<string>()?.ToString();
+                string command = jsonShortcut.SelectToken("$.command")?.Value<string>()?.ToString();
 
-                shortcuts.Add(new Shortcut(keybinding, command));
+                shortcuts.Add(new Shortcut(keybinding, name, command));
             }
         }
 
@@ -109,6 +123,11 @@ namespace shortcutManager
                 File.Create(configPath);
 
             return configPath;
+        }
+
+        public void Stop()
+        {
+            keyStrokeHandler?.StopService();
         }
     }
 }

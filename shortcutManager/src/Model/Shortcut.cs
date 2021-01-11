@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace shortcutManager
 
         private ISet<Keys> keys;
 
+        public string ShortcutName { get; set; }
+
         public string Command { get; set; }
 
         public Shortcut()
@@ -22,7 +25,7 @@ namespace shortcutManager
             Command = "";
         }
 
-        public Shortcut(string strKeys, string strCommand) : base(strKeys)
+        public Shortcut(string strKeys, string strName,  string strCommand) : base(strKeys)
         {
             if(strKeys != null)
             {
@@ -41,7 +44,15 @@ namespace shortcutManager
                 }
             }
 
-            if(strCommand != null)
+            if (strName != null)
+            {
+                ShortcutName = strName;
+            } else
+            {
+                ShortcutName = "";
+            }
+
+            if (strCommand != null)
             {
                 Command = strCommand;
             }
@@ -76,9 +87,24 @@ namespace shortcutManager
             return result;
         }
 
-        public bool deleteKey(Keys key)
+        public bool DeleteKey(Keys key)
         {
             return keys.Remove(key);
+        }
+
+        public void RunCommand()
+        {
+            System.Threading.Thread thread = new System.Threading.Thread(() =>
+            {
+                Process process = new Process();
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C " + Command;
+                process.StartInfo = startInfo;
+                process.Start();
+            });
+            thread.Start();
         }
     }
 }

@@ -85,7 +85,7 @@ namespace shortcutManager
 
             if((e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back) && inputs.Count > 0)
             {
-                Shortcut.deleteKey(inputs.Pop());
+                Shortcut.DeleteKey(inputs.Pop());
             }
             else if (Shortcut.AddKey(e.KeyCode))
             {
@@ -93,6 +93,18 @@ namespace shortcutManager
             }
 
             text.Text = Shortcut.GetKeysAsString();
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // NewShortcutForm
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "NewShortcutForm";
+            this.ResumeLayout(false);
+
         }
     }
 }

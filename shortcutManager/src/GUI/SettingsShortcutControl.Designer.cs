@@ -34,6 +34,10 @@ namespace shortcutManager
             this.keystrokeBox = new System.Windows.Forms.GroupBox();
             this.listViewKeystrokes = new System.Windows.Forms.ListView();
             this.commandBox = new System.Windows.Forms.GroupBox();
+            this.tableCommand = new System.Windows.Forms.TableLayoutPanel();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelCommand = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxCommand = new System.Windows.Forms.TextBox();
             this.actionsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonAddKeystroke = new System.Windows.Forms.Button();
@@ -46,6 +50,7 @@ namespace shortcutManager
             this.keystrokeCommandSplit.SuspendLayout();
             this.keystrokeBox.SuspendLayout();
             this.commandBox.SuspendLayout();
+            this.tableCommand.SuspendLayout();
             this.actionsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,9 +88,37 @@ namespace shortcutManager
             // commandBox
             // 
             resources.ApplyResources(this.commandBox, "commandBox");
-            this.commandBox.Controls.Add(this.textBoxCommand);
+            this.commandBox.Controls.Add(this.tableCommand);
             this.commandBox.Name = "commandBox";
             this.commandBox.TabStop = false;
+            // 
+            // tableCommand
+            // 
+            resources.ApplyResources(this.tableCommand, "tableCommand");
+            this.tableCommand.Controls.Add(this.labelName, 0, 0);
+            this.tableCommand.Controls.Add(this.labelCommand, 0, 1);
+            this.tableCommand.Controls.Add(this.textBoxName, 1, 0);
+            this.tableCommand.Controls.Add(this.textBoxCommand, 1, 1);
+            this.tableCommand.Name = "tableCommand";
+            // 
+            // labelName
+            // 
+            resources.ApplyResources(this.labelName, "labelName");
+            this.labelName.Name = "labelName";
+            // 
+            // labelCommand
+            // 
+            resources.ApplyResources(this.labelCommand, "labelCommand");
+            this.labelCommand.Name = "labelCommand";
+            // 
+            // textBoxName
+            // 
+            resources.ApplyResources(this.textBoxName, "textBoxName");
+            this.textBoxName.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxName.HideSelection = false;
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // textBoxCommand
             // 
@@ -94,6 +127,7 @@ namespace shortcutManager
             this.textBoxCommand.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxCommand.HideSelection = false;
             this.textBoxCommand.Name = "textBoxCommand";
+            this.textBoxCommand.TextChanged += new System.EventHandler(this.textBoxCommand_TextChanged);
             // 
             // actionsPanel
             // 
@@ -145,7 +179,8 @@ namespace shortcutManager
             this.keystrokeCommandSplit.ResumeLayout(false);
             this.keystrokeBox.ResumeLayout(false);
             this.commandBox.ResumeLayout(false);
-            this.commandBox.PerformLayout();
+            this.tableCommand.ResumeLayout(false);
+            this.tableCommand.PerformLayout();
             this.actionsPanel.ResumeLayout(false);
             this.actionsPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -157,7 +192,6 @@ namespace shortcutManager
         private System.Windows.Forms.SplitContainer keystrokeCommandSplit;
         private System.Windows.Forms.GroupBox keystrokeBox;
         private System.Windows.Forms.ListView listViewKeystrokes;
-        private System.Windows.Forms.GroupBox commandBox;
         private System.Windows.Forms.TextBox textBoxCommand;
         private System.Windows.Forms.FlowLayoutPanel actionsPanel;
         private System.Windows.Forms.Button buttonAddKeystroke;
@@ -174,6 +208,16 @@ namespace shortcutManager
             return textBoxCommand;
         }
 
+        public System.Windows.Forms.TextBox GetNameTextBox()
+        {
+            return textBoxName;
+        }
+
         private System.Windows.Forms.Button buttonRemove;
+        private System.Windows.Forms.TableLayoutPanel tableCommand;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelCommand;
+        private System.Windows.Forms.GroupBox commandBox;
     }
 }

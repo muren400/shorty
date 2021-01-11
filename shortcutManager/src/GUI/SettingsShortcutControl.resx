@@ -117,320 +117,431 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="commandBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonAddKeystroke.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;textBoxCommand.Name" xml:space="preserve">
-    <value>textBoxCommand</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonReloadConfig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 3</value>
-  </data>
-  <data name="&gt;&gt;listViewKeystrokes.Parent" xml:space="preserve">
-    <value>keystrokeBox</value>
-  </data>
-  <data name="buttonSave.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;keystrokeCommandSplit.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="keystrokeBox.Text" xml:space="preserve">
-    <value>Keystrokes</value>
-  </data>
-  <data name="keystrokeBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 373</value>
-  </data>
-  <data name="&gt;&gt;keystrokeBox.Name" xml:space="preserve">
-    <value>keystrokeBox</value>
-  </data>
-  <data name="&gt;&gt;textBoxCommand.Parent" xml:space="preserve">
-    <value>commandBox</value>
-  </data>
-  <data name="&gt;&gt;buttonRemove.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="textBoxCommand.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="buttonSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>323, 3</value>
-  </data>
-  <data name="&gt;&gt;buttonAddKeystroke.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="buttonReloadConfig.Text" xml:space="preserve">
-    <value>Reload</value>
-  </data>
-  <data name="buttonReloadConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 37</value>
-  </data>
-  <data name="buttonAddKeystroke.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="keystrokeCommandSplit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;buttonAddKeystroke.Name" xml:space="preserve">
-    <value>buttonAddKeystroke</value>
-  </data>
-  <data name="buttonRemove.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="keystrokeBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;keystrokeBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;keystrokeCommandSplit.Panel2.Name" xml:space="preserve">
-    <value>keystrokeCommandSplit.Panel2</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="actionsPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;keystrokeCommandSplit.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;actionsPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;actionsPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;keystrokeCommandSplit.Panel2.Parent" xml:space="preserve">
-    <value>keystrokeCommandSplit</value>
-  </data>
-  <data name="keystrokeCommandSplit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>518, 373</value>
-  </data>
-  <data name="keystrokeCommandSplit.SplitterDistance" type="System.Int32, mscorlib">
-    <value>172</value>
-  </data>
-  <data name="&gt;&gt;keystrokeCommandSplit.Panel1.Name" xml:space="preserve">
-    <value>keystrokeCommandSplit.Panel1</value>
-  </data>
-  <data name="keystrokeCommandSplit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="buttonAddKeystroke.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="&gt;&gt;commandBox.Parent" xml:space="preserve">
-    <value>keystrokeCommandSplit.Panel2</value>
-  </data>
-  <data name="&gt;&gt;buttonReloadConfig.Name" xml:space="preserve">
-    <value>buttonReloadConfig</value>
-  </data>
-  <data name="textBoxCommand.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="buttonAddKeystroke.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SettingsShortcutControl</value>
-  </data>
-  <data name="commandBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;listViewKeystrokes.Name" xml:space="preserve">
-    <value>listViewKeystrokes</value>
-  </data>
-  <data name="&gt;&gt;buttonRemove.Parent" xml:space="preserve">
-    <value>actionsPanel</value>
-  </data>
-  <data name="&gt;&gt;buttonSave.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;textBoxCommand.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;buttonSave.Parent" xml:space="preserve">
-    <value>actionsPanel</value>
-  </data>
-  <data name="listViewKeystrokes.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="buttonReloadConfig.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="buttonRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 3</value>
-  </data>
-  <data name="buttonSave.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>518, 417</value>
-  </data>
-  <data name="keystrokeCommandSplit.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;listViewKeystrokes.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="commandBox.Text" xml:space="preserve">
-    <value>Command</value>
-  </data>
-  <data name="keystrokeBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;keystrokeBox.Parent" xml:space="preserve">
-    <value>keystrokeCommandSplit.Panel1</value>
-  </data>
-  <data name="&gt;&gt;commandBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonRemove.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;buttonSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;keystrokeCommandSplit.Name" xml:space="preserve">
-    <value>keystrokeCommandSplit</value>
-  </data>
-  <data name="&gt;&gt;textBoxCommand.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;commandBox.Name" xml:space="preserve">
-    <value>commandBox</value>
-  </data>
-  <data name="buttonRemove.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="&gt;&gt;commandBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="buttonSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 37</value>
-  </data>
-  <data name="&gt;&gt;keystrokeCommandSplit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="actionsPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 373</value>
+  <data name="buttonSave.Text" xml:space="preserve">
+    <value>save</value>
   </data>
   <data name="&gt;&gt;buttonAddKeystroke.Parent" xml:space="preserve">
     <value>actionsPanel</value>
   </data>
-  <data name="&gt;&gt;buttonReloadConfig.Parent" xml:space="preserve">
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="textBoxName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;keystrokeCommandSplit.Panel1.Name" xml:space="preserve">
+    <value>keystrokeCommandSplit.Panel1</value>
+  </data>
+  <data name="&gt;&gt;keystrokeCommandSplit.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelName.Name" xml:space="preserve">
+    <value>labelName</value>
+  </data>
+  <data name="&gt;&gt;buttonSave.Parent" xml:space="preserve">
     <value>actionsPanel</value>
   </data>
-  <data name="&gt;&gt;actionsPanel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="keystrokeBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 373</value>
   </data>
-  <data name="buttonSave.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;keystrokeCommandSplit.Panel1.Parent" xml:space="preserve">
+    <value>keystrokeCommandSplit</value>
+  </data>
+  <data name="labelName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="labelCommand.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="buttonAddKeystroke.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 37</value>
+  </data>
+  <data name="&gt;&gt;listViewKeystrokes.Name" xml:space="preserve">
+    <value>listViewKeystrokes</value>
+  </data>
+  <data name="&gt;&gt;textBoxCommand.Parent" xml:space="preserve">
+    <value>tableCommand</value>
+  </data>
+  <data name="labelCommand.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 33</value>
+  </data>
+  <data name="&gt;&gt;keystrokeCommandSplit.Panel2.Parent" xml:space="preserve">
+    <value>keystrokeCommandSplit</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="commandBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;keystrokeBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;commandBox.Parent" xml:space="preserve">
+    <value>keystrokeCommandSplit.Panel2</value>
+  </data>
+  <data name="&gt;&gt;commandBox.Name" xml:space="preserve">
+    <value>commandBox</value>
+  </data>
+  <data name="labelCommand.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="&gt;&gt;buttonRemove.Name" xml:space="preserve">
     <value>buttonRemove</value>
   </data>
-  <data name="&gt;&gt;keystrokeCommandSplit.Panel1.Parent" xml:space="preserve">
-    <value>keystrokeCommandSplit</value>
+  <data name="&gt;&gt;textBoxName.Parent" xml:space="preserve">
+    <value>tableCommand</value>
   </data>
-  <data name="listViewKeystrokes.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="buttonRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 37</value>
-  </data>
-  <data name="keystrokeBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="listViewKeystrokes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 354</value>
-  </data>
-  <data name="textBoxCommand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="buttonAddKeystroke.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="listViewKeystrokes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="&gt;&gt;buttonAddKeystroke.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSave.Name" xml:space="preserve">
-    <value>buttonSave</value>
-  </data>
-  <data name="buttonAddKeystroke.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 37</value>
-  </data>
-  <data name="&gt;&gt;keystrokeCommandSplit.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;keystrokeCommandSplit.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;buttonRemove.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="buttonSave.Text" xml:space="preserve">
-    <value>save</value>
-  </data>
-  <data name="buttonReloadConfig.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="textBoxCommand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 354</value>
-  </data>
-  <data name="commandBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;actionsPanel.Name" xml:space="preserve">
-    <value>actionsPanel</value>
-  </data>
-  <data name="actionsPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="buttonRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;keystrokeCommandSplit.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonReloadConfig.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;keystrokeCommandSplit.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="actionsPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>518, 44</value>
+  <data name="&gt;&gt;keystrokeCommandSplit.Panel2.Name" xml:space="preserve">
+    <value>keystrokeCommandSplit.Panel2</value>
   </data>
   <data name="commandBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>342, 373</value>
   </data>
-  <data name="&gt;&gt;keystrokeBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;labelCommand.Name" xml:space="preserve">
+    <value>labelCommand</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;buttonSave.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;buttonReloadConfig.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;textBoxName.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="textBoxCommand.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;actionsPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonAddKeystroke.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelCommand.Text" xml:space="preserve">
+    <value>Command</value>
+  </data>
+  <data name="&gt;&gt;buttonReloadConfig.Parent" xml:space="preserve">
+    <value>actionsPanel</value>
+  </data>
+  <data name="buttonRemove.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
+  </data>
+  <data name="keystrokeBox.Text" xml:space="preserve">
+    <value>Keystrokes</value>
+  </data>
+  <data name="keystrokeCommandSplit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tableCommand.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonReloadConfig.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 37</value>
+  </data>
+  <data name="&gt;&gt;buttonAddKeystroke.Name" xml:space="preserve">
+    <value>buttonAddKeystroke</value>
+  </data>
+  <data name="commandBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;buttonSave.Name" xml:space="preserve">
+    <value>buttonSave</value>
+  </data>
+  <data name="listViewKeystrokes.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="keystrokeCommandSplit.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tableCommand.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="listViewKeystrokes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="&gt;&gt;tableCommand.Parent" xml:space="preserve">
+    <value>commandBox</value>
+  </data>
+  <data name="&gt;&gt;buttonAddKeystroke.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonReloadConfig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 37</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SettingsShortcutControl</value>
+  </data>
+  <data name="tableCommand.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 354</value>
+  </data>
+  <data name="&gt;&gt;tableCommand.Name" xml:space="preserve">
+    <value>tableCommand</value>
+  </data>
+  <data name="textBoxName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 3</value>
+  </data>
+  <data name="&gt;&gt;labelCommand.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;commandBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="commandBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="keystrokeCommandSplit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>518, 373</value>
+  </data>
+  <data name="&gt;&gt;textBoxName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;keystrokeCommandSplit.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="keystrokeBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonRemove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;labelName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableCommand.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonRemove.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;keystrokeCommandSplit.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 37</value>
+  </data>
+  <data name="buttonRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 3</value>
+  </data>
+  <data name="labelName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;buttonReloadConfig.Name" xml:space="preserve">
+    <value>buttonReloadConfig</value>
+  </data>
+  <data name="&gt;&gt;buttonRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonReloadConfig.Text" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="&gt;&gt;keystrokeCommandSplit.Name" xml:space="preserve">
+    <value>keystrokeCommandSplit</value>
+  </data>
+  <data name="keystrokeBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>518, 417</value>
+  </data>
+  <data name="&gt;&gt;listViewKeystrokes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;keystrokeCommandSplit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;actionsPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="actionsPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>518, 44</value>
+  </data>
+  <data name="labelCommand.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="actionsPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 373</value>
+  </data>
+  <data name="textBoxCommand.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 36</value>
+  </data>
+  <data name="buttonReloadConfig.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;textBoxName.Name" xml:space="preserve">
+    <value>textBoxName</value>
+  </data>
+  <data name="keystrokeCommandSplit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableCommand.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelName" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelCommand" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="textBoxName" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBoxCommand" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="Absolute,33,Absolute,94" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="&gt;&gt;labelCommand.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tableCommand.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="buttonSave.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;labelCommand.Parent" xml:space="preserve">
+    <value>tableCommand</value>
+  </data>
+  <data name="listViewKeystrokes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 354</value>
+  </data>
+  <data name="&gt;&gt;buttonRemove.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>323, 3</value>
+  </data>
+  <data name="tableCommand.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonAddKeystroke.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="&gt;&gt;buttonReloadConfig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="buttonSave.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;listViewKeystrokes.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;buttonReloadConfig.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;buttonReloadConfig.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textBoxCommand.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;buttonAddKeystroke.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textBoxCommand.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBoxCommand.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;actionsPanel.Name" xml:space="preserve">
+    <value>actionsPanel</value>
+  </data>
+  <data name="buttonAddKeystroke.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="actionsPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="&gt;&gt;commandBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;keystrokeCommandSplit.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;actionsPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonAddKeystroke.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;keystrokeCommandSplit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textBoxCommand.Name" xml:space="preserve">
+    <value>textBoxCommand</value>
+  </data>
+  <data name="buttonReloadConfig.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="actionsPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tableCommand.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="textBoxCommand.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 315</value>
+  </data>
+  <data name="keystrokeCommandSplit.SplitterDistance" type="System.Int32, mscorlib">
+    <value>172</value>
+  </data>
+  <data name="&gt;&gt;keystrokeBox.Parent" xml:space="preserve">
+    <value>keystrokeCommandSplit.Panel1</value>
+  </data>
+  <data name="keystrokeBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="listViewKeystrokes.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="textBoxCommand.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;buttonRemove.Parent" xml:space="preserve">
+    <value>actionsPanel</value>
+  </data>
+  <data name="labelName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="&gt;&gt;keystrokeCommandSplit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonAddKeystroke.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 20</value>
+  </data>
+  <data name="buttonSave.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;labelName.Parent" xml:space="preserve">
+    <value>tableCommand</value>
+  </data>
+  <data name="buttonReloadConfig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>211, 3</value>
+  </data>
+  <data name="labelCommand.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="textBoxName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;keystrokeBox.Name" xml:space="preserve">
+    <value>keystrokeBox</value>
+  </data>
+  <data name="labelName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBoxCommand.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;listViewKeystrokes.Parent" xml:space="preserve">
+    <value>keystrokeBox</value>
+  </data>
+  <data name="labelName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="tableCommand.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="&gt;&gt;keystrokeBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

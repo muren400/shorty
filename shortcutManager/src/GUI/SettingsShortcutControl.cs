@@ -50,13 +50,25 @@ namespace shortcutManager
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            if(listViewKeystrokes.SelectedItems.Count > 0)
+            shortcutManager.WriteShortcuts();
+        }
+
+        private void textBoxName_TextChanged(object sender, EventArgs e)
+        {
+            if (listViewKeystrokes.SelectedItems.Count > 0)
+            {
+                Shortcut shortcut = listViewKeystrokes.SelectedItems.OfType<Shortcut>().First();
+                shortcut.ShortcutName = textBoxName.Text;
+            }
+        }
+
+        private void textBoxCommand_TextChanged(object sender, EventArgs e)
+        {
+            if (listViewKeystrokes.SelectedItems.Count > 0)
             {
                 Shortcut shortcut = listViewKeystrokes.SelectedItems.OfType<Shortcut>().First();
                 shortcut.Command = textBoxCommand.Text;
             }
-
-            shortcutManager.WriteShortcuts();
         }
     }
 }

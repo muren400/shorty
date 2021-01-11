@@ -21,7 +21,12 @@ namespace shortcutManager
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool GetMessage(ref Message lpMsg, IntPtr hWnd, uint wMsgFilterMin, uint wMsgFilterMax);
 
-        Thread keyStrokeListenerThread;
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern UIntPtr SetTimer(IntPtr hWnd, UIntPtr nIDEvent, uint uElapse, TimerProc lpTimerFunc);
+        private delegate void TimerProc(IntPtr hWnd, uint uMsg, IntPtr nIDEvent, uint dwTime);
+
+        private Thread keyStrokeListenerThread;
+        private static bool kill = false;
 
         private enum KeyModifier
         {
@@ -116,6 +121,7 @@ namespace shortcutManager
             }
 
             keyStrokeListenerThread = new Thread(RegisterAndListen);
+            kill = false;
             keyStrokeListenerThread.Start();
         }
 
@@ -123,13 +129,19 @@ namespace shortcutManager
         {
             RegisterKeyStrokes();
 
-            Message msg = new Message();
+            SetTimer(IntPtr.Zero, UIntPtr.Zero, 2000, null);
 
+            Message msg = new Message();
             while (GetMessage(ref msg, IntPtr.Zero, 0, 0))
             {
-                if (msg.Msg != WM_HOTKEY)
+                if(kill)
                 {
                     return;
+                }
+
+                if (msg.Msg != WM_HOTKEY)
+                {
+                    continue;
                 }
 
                 HandleKeyStroke((int)msg.WParam);
@@ -143,14 +155,12 @@ namespace shortcutManager
                 return;
             }
 
-            Process process = new Process();
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C " + shortcut.Command;
-            process.StartInfo = startInfo;
-            bool result = process.Start();
-            Console.WriteLine(result);
+            shortcut.RunCommand();
+        }
+
+        public void StopService()
+        {
+            kill = true;
         }
     }
 }

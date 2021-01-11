@@ -14,10 +14,8 @@ namespace shortcutManager
     public class SettingsShortcuts : SettingsItem
     {
         private SettingsShortcutControl settingsShortcutControl;
-        private SplitContainer splitContainer;
         private ListView shortcutsListView;
-        private TextBox commandTextBox;
-        private ShortcutManager shortcutManager;
+        private readonly ShortcutManager shortcutManager;
 
         public SettingsShortcuts(ShortcutManager shortcutManager, string text, int imageIndex) : base(text, imageIndex) {
             this.shortcutManager = shortcutManager;
@@ -36,62 +34,9 @@ namespace shortcutManager
             {
                 Dock = DockStyle.Fill
             };
-            //splitContainer = new SplitContainer();
-            //splitContainer.Dock = DockStyle.Fill;
-
-            //Label labelShortcuts = new Label
-            //{
-            //    AutoSize = true,
-            //    Text = "Shortcuts",
-            //    Dock = DockStyle.Top
-            //};
-
-            //shortcutsListView = new ListView
-            //{
-            //    FullRowSelect = true,
-            //    Dock = DockStyle.Fill,
-            //    LabelEdit = true
-            //};
 
             shortcutsListView = settingsShortcutControl.GetKeystrokesListView();
             shortcutsListView.ItemSelectionChanged += ShortcutSelectedEvent;
-
-            //TableLayoutPanel actionsTable = new TableLayoutPanel
-            //{
-            //    Dock = DockStyle.Bottom
-            //};
-            //splitContainer.Panel1.Controls.Add(actionsTable);
-
-            //Button addButton = new Button
-            //{
-            //    Text = "Add Shortcut",
-            //    Dock = DockStyle.Bottom
-            //};
-
-            //addButton.Click += AddButton_Click;
-
-            //actionsTable.Controls.Add(addButton);
-
-            //splitContainer.Panel1.Controls.Add(shortcutsListView);
-            //splitContainer.Panel1.Controls.Add(labelShortcuts);
-
-            //Label labelCommand = new Label
-            //{
-            //    AutoSize = true,
-            //    Text = "Command",
-            //    Dock = DockStyle.Top
-            //};
-
-            //commandTextBox = new TextBox
-            //{
-            //    Multiline = true,
-            //    Dock = DockStyle.Fill
-            //};
-
-            commandTextBox = settingsShortcutControl.GetCommandTextBox();
-
-            //splitContainer.Panel2.Controls.Add(commandTextBox);
-            //splitContainer.Panel2.Controls.Add(labelCommand);
 
             ReloadShortcus();
         }
@@ -140,7 +85,8 @@ namespace shortcutManager
 
             Shortcut shortcut = (Shortcut)item;
 
-            commandTextBox.Text = shortcut.Command;
+            settingsShortcutControl.GetNameTextBox().Text = shortcut.ShortcutName;
+            settingsShortcutControl.GetCommandTextBox().Text = shortcut.Command;
         }
 
         public void ShortcutsManagerPropertyChanged(object sender, PropertyChangedEventArgs e)
