@@ -1,0 +1,32 @@
+{
+  "shortcuts": [
+    {
+      "name": "Test 1",
+      "command": "Command 1",
+      "keys": [
+        {
+          "code": 17,
+          "displayValue": "Control"
+        },
+        {
+          "code": 222,
+          "displayValue": "ä"
+        }
+      ]
+    },
+    {
+      "name": "Test 2",
+      "command": "Command 2",
+      "keys": [
+        {
+          "code": 17,
+          "displayValue": "Control"
+        },
+        {
+          "code": 192,
+          "displayValue": "ö"
+        }
+      ]
+    }
+  ]
+}

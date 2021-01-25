@@ -1,0 +1,35 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+
+@import '~antd/dist/antd.css';
+body {
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.ant-tabs-nav-wrap {
+  /* background-color: darkgray; */
+}
+
+.ant-tabs-content-holder {
+  /* background-color: lightgray; */
+}
+
+.ant-tabs-tab {
+  margin-bottom: 0;
+  /* background-color: darkgray; */
+}
+
+.ant-tabs-nav .ant-tabs-tab-active {
+  /* background-color: lightgray; */
+}
+
+.ant-tabs-card {
+  border: none;
+}

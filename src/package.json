@@ -1,0 +1,32 @@
+{
+    "name": "shorty",
+    "productName": "Shorty",
+    "version": "1.0.0",
+    "description": "...",
+    "main": "./main.prod.js",
+    "author": {
+        "name": "Andreas Baumann",
+        "email": "andreas.baumann3000@gmail.com",
+        "url": "https://muren400.github.io"
+    },
+    "scripts": {
+        "electron-rebuild": "node -r ../.srt/scripts/BabelRegister.js ../.srt/scripts/ElectronRebuild.js",
+        "postinstall": "yarn electron-rebuild"
+    },
+    "license": "MIT",
+    "dependencies": {},
+    "iohook": {
+        "targets": [
+            "node-83",
+            "electron-85"
+        ],
+        "platforms": [
+            "win32",
+            "darwin",
+            "linux"
+        ],
+        "arches": [
+            "x64"
+        ]
+    }
+}
