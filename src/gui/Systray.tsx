@@ -3,6 +3,12 @@ import fs from 'fs-extra';
 import path from 'path';
 import ShortcutModel from '../logic/ShortcutModel';
 import SettingsWindow from './SettingsWindow';
+import { app } from 'electron';
+import Shortcut from '../logic/Shortcut';
+
+const RESOURCES_PATH = app.isPackaged
+    ? path.join(process.resourcesPath, 'assets')
+    : path.join(__dirname, '../../assets');
 
 export default class Systray {
   systray: SysTray;
@@ -14,13 +20,61 @@ export default class Systray {
     this.settingsWindow = new SettingsWindow(this.shortcutModel);
 
     let iconPath = path.join(
-      __dirname,
-      `../../assets/icon.${process.platform === 'win32' ? 'ico' : 'png'}`
+      RESOURCES_PATH,
+      `icon.${process.platform === 'win32' ? 'ico' : 'png'}`
     );
     iconPath = path.join(
-      __dirname,
-      `../../assets/icon_debug.${process.platform === 'win32' ? 'ico' : 'png'}`
+      RESOURCES_PATH,
+      `icon_debug.${process.platform === 'win32' ? 'ico' : 'png'}`
     );
+
+    let items = new Array();
+
+    let idToItem = new Map<number, Shortcut | string>();
+
+    let id = 0;
+
+    this.shortcutModel.shortcuts.forEach((shortcut) => {
+      items.push({
+        title: shortcut.name,
+        tooltip: shortcut.command,
+        // checked is implement by plain text in linux
+        checked: false,
+        enabled: true,
+      });
+
+      idToItem.set(id++, shortcut);
+    });
+
+    items.push({
+      title: '-',
+      tooltip: '',
+      // checked is implement by plain text in linux
+      checked: false,
+      enabled: false,
+    });
+
+    id++;
+
+    items.push({
+      title: 'Settings',
+      tooltip: 'Settings',
+      // checked is implement by plain text in linux
+      checked: false,
+      enabled: true,
+    });
+
+    idToItem.set(id++, "Settings");
+
+    items.push({
+      title: 'Exit',
+      tooltip: 'Quit Shorty',
+      // checked is implement by plain text in linux
+      checked: false,
+      enabled: true,
+    });
+
+    idToItem.set(id++, "Exit");
 
     let icon = fs.readFileSync(iconPath);
     this.systray = new SysTray({
@@ -29,28 +83,14 @@ export default class Systray {
         icon: icon.toString('base64'),
         title: 'Shorty',
         tooltip: 'Settings',
-        items: [
-          {
-            title: 'Settings',
-            tooltip: 'Settings',
-            // checked is implement by plain text in linux
-            checked: false,
-            enabled: true,
-          },
-          {
-            title: 'Exit',
-            tooltip: 'bb',
-            checked: false,
-            enabled: true,
-          },
-        ],
+        items: items,
       },
       debug: false,
       copyDir: true, // copy go tray binary to outside directory, useful for packing tool like pkg.
     });
 
     this.systray.onClick((action) => {
-      if (action.seq_id === 0) {
+      if (idToItem.get(action.seq_id) === "Settings") {
         // systray.sendAction({
         //     type: 'update-item',
         //     item: {
@@ -60,8 +100,15 @@ export default class Systray {
         //     seq_id: action.seq_id,
         // })
         this.onSettingsClick();
-      } else if (action.seq_id === 1) {
+      } else if (idToItem.get(action.seq_id) === "Exit") {
         this.onCloseClick();
+      } else {
+        let shortcut = idToItem.get(action.seq_id);
+        if(!shortcut || typeof shortcut == 'string') {
+          return;
+        }
+
+        shortcut.executeCommand();
       }
     });
   }

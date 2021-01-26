@@ -40,8 +40,12 @@ shortcutModel.readConfigMain();
 
 let systray = new Systray(shortcutModel);
 
-const keystrokeHandler = new KeystrokeHandler(shortcutModel);
-keystrokeHandler.startListening();
+try {
+  let keystrokeHandler = new KeystrokeHandler(shortcutModel);
+  keystrokeHandler.startListening();
+} catch (error) {
+  console.log(error);
+}
 
 /**
  * Add event listeners...

@@ -14,7 +14,9 @@
         "postinstall": "yarn electron-rebuild"
     },
     "license": "MIT",
-    "dependencies": {},
+    "dependencies": {
+        "iohook": "^0.7.2"
+    },
     "iohook": {
         "targets": [
             "node-83",
