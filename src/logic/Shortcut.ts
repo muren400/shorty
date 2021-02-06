@@ -2,13 +2,18 @@ import { exec } from 'child_process';
 
 export default class Shortcut {
   name: string;
+
   keys: Map<number, string>;
+
   command: string;
+
+  request: string;
 
   constructor(config: any) {
     this.name = config.name ? config.name : '';
     this.keys = config.keys ? config.keys : new Map();
     this.command = config.command ? config.command : '';
+    this.request = config.request ? config.request : '';
   }
 
   addKey(keyCode: number, displayValue: string) {
@@ -16,9 +21,9 @@ export default class Shortcut {
   }
 
   removeLastKey() {
-    let lastCode = Array.from(this.keys.keys()).pop();
+    const lastCode = Array.from(this.keys.keys()).pop();
 
-    if(lastCode != null) {
+    if (lastCode != null) {
       this.keys.delete(lastCode);
     }
   }
@@ -31,23 +36,23 @@ export default class Shortcut {
     let count = 0;
 
     keyCodes.forEach((keyCode) => {
-      if(this.keys.get(keyCode) != null) {
-        count++;
+      if (this.keys.get(keyCode) != null) {
+        count += 1;
       }
     });
 
-    return count == this.keys.size;
+    return count === this.keys.size;
   }
 
   executeCommand() {
     exec(this.command, (error, stdout, stderr) => {
       if (error) {
-          console.log(`error: ${error.message}`);
-          return;
+        console.log(`error: ${error.message}`);
+        return;
       }
       if (stderr) {
-          console.log(`stderr: ${stderr}`);
-          return;
+        console.log(`stderr: ${stderr}`);
+        return;
       }
       console.log(`stdout: ${stdout}`);
     });

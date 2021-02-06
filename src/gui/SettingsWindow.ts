@@ -1,10 +1,11 @@
-import { app, BrowserWindow, shell } from "electron";
-import ShortcutModel from "../logic/ShortcutModel";
-import MenuBuilder from "../menu";
+import { app, BrowserWindow } from 'electron';
 import path from 'path';
+import ShortcutModel from '../logic/ShortcutModel';
+import MenuBuilder from '../menu';
 
 export default class SettingsWindow {
   window: BrowserWindow | null;
+
   shortcutModel: ShortcutModel;
 
   constructor(shortcutModel: ShortcutModel) {
@@ -38,7 +39,7 @@ export default class SettingsWindow {
   }
 
   async createWindow() {
-    if(this.window != null) {
+    if (this.window != null) {
       return;
     }
 
@@ -62,7 +63,9 @@ export default class SettingsWindow {
       width: 1024,
       height: 728,
       icon: getAssetPath('icon.png'),
+      frame: false,
       webPreferences: {
+        enableRemoteModule: true,
         nodeIntegration: true,
       },
     });
@@ -93,5 +96,5 @@ export default class SettingsWindow {
     // Remove this if your app does not use auto updates
     // eslint-disable-next-line
     // new AppUpdater();
-  };
+  }
 }

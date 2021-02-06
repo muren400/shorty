@@ -14,6 +14,7 @@ interface DarwinMenuItemConstructorOptions extends MenuItemConstructorOptions {
 
 export default class MenuBuilder {
   mainWindow: BrowserWindow;
+
   shortcutModel: ShortcutModel;
 
   constructor(mainWindow: BrowserWindow, shortcutModel: ShortcutModel) {

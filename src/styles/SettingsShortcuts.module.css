@@ -1,23 +1,5 @@
-/* .CommandBox {
-    width: 100%;
-    resize: none;
-    box-sizing: border-box;
-}
-
-.ShortCutSettingsContainer {
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-} */
-
-.ant-tabs-tab-active {
-}
-
 .CommandForm {
   padding-right: 24px;
 }
 
-.TabsContainer {
-  height: 100%;
-}
+

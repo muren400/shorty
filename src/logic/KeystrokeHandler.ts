@@ -4,9 +4,13 @@ import ShortcutModel from './ShortcutModel';
 
 export default class KeystrokeHandler {
   private pressedKeys: Set<number>;
+
   private lastKey: number;
+
   private registeredKeys: Set<number>;
+
   private released: boolean;
+
   private shortcutModel: ShortcutModel;
 
   public constructor(shortcutModel: ShortcutModel) {
@@ -32,9 +36,7 @@ export default class KeystrokeHandler {
     });
 
     ioHook.on('keyup', (event) => {
-      // console.log(event.keycode + " - " + String.fromCharCode(event.rawcode));
-
-      if (this.pressedKeys.delete(event.keycode) == false) {
+      if (this.pressedKeys.delete(event.keycode) === false) {
         return;
       }
 
@@ -45,55 +47,27 @@ export default class KeystrokeHandler {
 
       this.registeredKeys.add(event.keycode);
 
-      if (this.pressedKeys.size == 0) {
-        console.log(this.registeredKeys);
-
-        let shortcut = this.shortcutModel.getMatchingShortcut(Array.from(this.registeredKeys));
+      if (this.pressedKeys.size === 0) {
+        const shortcut = this.shortcutModel.getMatchingShortcut(
+          Array.from(this.registeredKeys)
+        );
         this.registeredKeys.clear();
 
-        if(shortcut == null) {
+        if (shortcut == null) {
           return;
         }
 
         shortcut.executeCommand();
-
-        // if(this.registeredKeys.has(3613) && this.registeredKeys.has(40)) {
-        //     exec("python c:/Users/erzae/Nextcloud/python/lazyRemote/lazyRemoteOn.py", (error, stdout, stderr) => {
-        //         if (error) {
-        //             console.log(`error: ${error.message}`);
-        //             return;
-        //         }
-        //         if (stderr) {
-        //             console.log(`stderr: ${stderr}`);
-        //             return;
-        //         }
-        //         console.log(`stdout: ${stdout}`);
-        //     });
-        // }
-
-        // if(this.registeredKeys.has(3613) && this.registeredKeys.has(41)) {
-        //     exec("python c:/Users/erzae/Nextcloud/python/lazyRemote/lazyRemoteOff.py", (error, stdout, stderr) => {
-        //         if (error) {
-        //             console.log(`error: ${error.message}`);
-        //             return;
-        //         }
-        //         if (stderr) {
-        //             console.log(`stderr: ${stderr}`);
-        //             return;
-        //         }
-        //         console.log(`stdout: ${stdout}`);
-        //     });
-        // }
       }
     });
     ioHook.start();
   }
 
-  isSetup() {
+  isSetup = () => {
     return (
       BrowserWindow.getAllWindows().filter((b) => {
         return b.isVisible();
       }).length > 0
     );
-  }
+  };
 }

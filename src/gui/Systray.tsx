@@ -1,18 +1,20 @@
 import SysTray from 'systray';
 import fs from 'fs-extra';
 import path from 'path';
+import { app } from 'electron';
 import ShortcutModel from '../logic/ShortcutModel';
 import SettingsWindow from './SettingsWindow';
-import { app } from 'electron';
 import Shortcut from '../logic/Shortcut';
 
 const RESOURCES_PATH = app.isPackaged
-    ? path.join(process.resourcesPath, 'assets')
-    : path.join(__dirname, '../../assets');
+  ? path.join(process.resourcesPath, 'assets')
+  : path.join(__dirname, '../../assets');
 
 export default class Systray {
   systray: SysTray;
+
   shortcutModel: ShortcutModel;
+
   settingsWindow: SettingsWindow;
 
   constructor(shortcutModel: ShortcutModel) {
@@ -23,20 +25,23 @@ export default class Systray {
       RESOURCES_PATH,
       `icon.${process.platform === 'win32' ? 'ico' : 'png'}`
     );
-    iconPath = path.join(
-      RESOURCES_PATH,
-      `icon_debug.${process.platform === 'win32' ? 'ico' : 'png'}`
-    );
 
-    let items = new Array();
+    if (process.env.NODE_ENV === 'development') {
+      iconPath = path.join(
+        RESOURCES_PATH,
+        `icon_debug.${process.platform === 'win32' ? 'ico' : 'png'}`
+      );
+    }
 
-    let idToItem = new Map<number, Shortcut | string>();
+    const items = [];
+
+    const idToItem = new Map<number, Shortcut | string>();
 
     let id = 0;
 
     this.shortcutModel.shortcuts.forEach((shortcut) => {
       items.push({
-        title: shortcut.name,
+        title: `${shortcut.name} (${shortcut.getDisplayString()})`,
         tooltip: shortcut.command,
         // checked is implement by plain text in linux
         checked: false,
@@ -64,7 +69,7 @@ export default class Systray {
       enabled: true,
     });
 
-    idToItem.set(id++, "Settings");
+    idToItem.set(id++, 'Settings');
 
     items.push({
       title: 'Exit',
@@ -74,9 +79,9 @@ export default class Systray {
       enabled: true,
     });
 
-    idToItem.set(id++, "Exit");
+    idToItem.set(id++, 'Exit');
 
-    let icon = fs.readFileSync(iconPath);
+    const icon = fs.readFileSync(iconPath);
     this.systray = new SysTray({
       menu: {
         // you should using .png icon in macOS/Linux, but .ico format in windows
@@ -90,7 +95,7 @@ export default class Systray {
     });
 
     this.systray.onClick((action) => {
-      if (idToItem.get(action.seq_id) === "Settings") {
+      if (idToItem.get(action.seq_id) === 'Settings') {
         // systray.sendAction({
         //     type: 'update-item',
         //     item: {
@@ -100,11 +105,11 @@ export default class Systray {
         //     seq_id: action.seq_id,
         // })
         this.onSettingsClick();
-      } else if (idToItem.get(action.seq_id) === "Exit") {
+      } else if (idToItem.get(action.seq_id) === 'Exit') {
         this.onCloseClick();
       } else {
-        let shortcut = idToItem.get(action.seq_id);
-        if(!shortcut || typeof shortcut == 'string') {
+        const shortcut = idToItem.get(action.seq_id);
+        if (!shortcut || typeof shortcut === 'string') {
           return;
         }
 

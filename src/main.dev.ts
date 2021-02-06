@@ -17,6 +17,7 @@ import log from 'electron-log';
 import KeystrokeHandler from './logic/KeystrokeHandler';
 import ShortcutModel from './logic/ShortcutModel';
 import Systray from './gui/Systray';
+import RequestListener from './logic/RequestListener';
 
 export default class AppUpdater {
   constructor() {
@@ -35,14 +36,21 @@ if (
   app.setPath('userData', path.join(appData, build.productName))
 }
 
-let shortcutModel = new ShortcutModel();
+const shortcutModel = new ShortcutModel();
 shortcutModel.readConfigMain();
 
-let systray = new Systray(shortcutModel);
+const systray = new Systray(shortcutModel);
 
 try {
-  let keystrokeHandler = new KeystrokeHandler(shortcutModel);
+  const keystrokeHandler = new KeystrokeHandler(shortcutModel);
   keystrokeHandler.startListening();
+} catch (error) {
+  console.log(error);
+}
+
+try {
+  const requestListener = new RequestListener(shortcutModel);
+  requestListener.startListening();
 } catch (error) {
   console.log(error);
 }
