@@ -33,6 +33,10 @@ export default class Shortcut {
   }
 
   matches(keyCodes: Array<number>) {
+    if (this.keys.size === 0) {
+      return false;
+    }
+
     let count = 0;
 
     keyCodes.forEach((keyCode) => {
